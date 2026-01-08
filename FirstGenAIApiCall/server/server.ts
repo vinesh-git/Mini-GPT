@@ -51,7 +51,7 @@ app.post("/chat", async (req, res) => {
         })
 
         for await (const chunk of stream) {
-            res.write(chunk);
+            res.write(chunk.text);
         }
         //res.write(`data: [DONE]\n\n`);
         res.end();
